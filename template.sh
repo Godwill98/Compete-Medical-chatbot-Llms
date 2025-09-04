@@ -5,7 +5,7 @@ mkdir -p research
 #create files
 touch src/__init__.py
 touch src/helper.py
-touch src/promptpy
+touch src/prompt.py
 touch .env
 touch setup.py
 touch app.py
