@@ -1,15 +1,19 @@
-langchain
+# Langchain packages pinned to resolve numpy conflict
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-chroma==0.1.1
+numpy==1.26.4
+
+# Other dependencies
 flask==3.1.1
 sentence-transformers==4.1.0
 pypdf==5.6.1
 python-dotenv==1.1.0
-langchain-community
-streamlit
+streamlit==1.37.0
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-pydantic==2.7.4
-chromadb
-langchain-chroma
-langchain-groq
+pydantic<2
+chromadb==0.4.24
+langchain-groq==0.2.0
 
 -e .
