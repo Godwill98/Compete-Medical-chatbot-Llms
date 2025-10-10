@@ -70,7 +70,7 @@ def create_local_vectorstore():
     
     # Test retrieval
     print("\n🔍 Testing retrieval...")
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
     test_results = retriever.invoke("What is diabetes?")
     
     print(f"Retrieved {len(test_results)} relevant chunks for test query")

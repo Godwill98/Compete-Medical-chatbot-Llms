@@ -14,6 +14,7 @@ from langchain.schema import Document
 import shutil
 
 # Load environment variables (optional now since we're not using Pinecone)
+# If using Pinecone vector DB (Cloud-based)
 load_dotenv()
 
 # Page configuration
@@ -24,7 +25,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Local storage paths
+# Local storage paths (Chroma DB Vector DB)
 CHROMA_DB_PATH = "./chroma_db"
 DATA_PATH = "./data"
 
@@ -144,8 +145,8 @@ def initialize_rag_chain():
     system_prompt = (
         "You are a medical assistant that helps users find information about medical conditions based on a set of documents. "
         "Use the provided context to answer the user's question accurately and concisely. "
-        "If you don't know the answer, just say that you don't know. "
-        "Use three sentences maximum."
+        "Otherwise, provide the best possible answer based on the context with the user request."
+        "Use four sentences maximum."
         "\n\n"
         "{context}"
     )
