@@ -35,9 +35,16 @@ A sophisticated medical information assistant powered by Retrieval-Augmented Gen
 - **💻 HTML/CSS/JS**: Custom web interface
 
 ### **AI Models**
-- **Language Model**: Llama 3.2 (3B parameters) - Local inference
+- **Language Models**: 
+  - **Local**: Llama 3.2 (3B/8B) via Ollama - Privacy-focused inference
+  - **Cloud**: Llama 3.1 (8B) via Groq - Free open-source models
 - **Embeddings**: BAAI/bge-small-en-v1.5 - Semantic understanding
 - **Vector Store**: ChromaDB - Local similarity search
+
+### **Deployment**
+- **🐳 Docker**: Containerized deployment
+- **☁️ Cloud Platforms**: Streamlit Cloud, Railway, Heroku
+- **🔐 API Services**: Groq (Free), Ollama (Local)
 
 ## 📋 Prerequisites
 
@@ -94,7 +101,36 @@ streamlit run streamlit_app.py
 
 # Option 2: FastAPI Server
 python fastapi_app.py
+
+# Option 3: Cloud-Compatible App (for deployment)
+streamlit run streamlit_app_cloud.py
 ```
+
+## 🌐 Cloud Deployment
+
+For cloud deployment, use `streamlit_app_cloud.py` which supports **Groq API** for free open-source models:
+
+### **Environment Variables for Cloud**
+```bash
+# Required for cloud deployment
+GROQ_API_KEY=your_groq_api_key_here
+
+# Optional deployment flags (auto-detected)
+STREAMLIT_SHARING=true
+RAILWAY_ENVIRONMENT=true
+```
+
+### **Get Groq API Key (Free)**
+1. Visit [Groq Console](https://console.groq.com/)
+2. Sign up for a free account
+3. Generate your API key
+4. Set it in your deployment platform's environment variables
+
+### **Supported Cloud Platforms**
+- **Streamlit Cloud**: Direct deployment from GitHub
+- **Railway**: One-click deployment
+- **Heroku**: Using Docker or buildpacks
+- **Render**: Static site deployment
 
 ## 📁 Project Structure
 
